@@ -1,21 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { PrimerDiaComponent } from './primer-dia/primer-dia.component';
+import { SegundoDiaComponent } from './segundo-dia/segundo-dia.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,PrimerDiaComponent,SegundoDiaComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'Tarjeta de valores';
-  description = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500';
-  card = {
-    title:'Tarjeta de valores',
-    description:'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500',
-    aviso:'Debes de ingresar datos',
-    contenido:'Este es un modal lanzado por un boton'
-  }
-  
+export class AppComponent{
+  dinamico = 'La variable hijo soy yo';
 }

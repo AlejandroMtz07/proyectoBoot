@@ -1,0 +1,100 @@
+<p>
+    Segundo dia funciona
+</p>
+<h3>
+    Botón usando solo ngif
+</h3>
+<button 
+    class="btn btn-primary" 
+    (click)="clickButton('success')" >cambios
+</button>
+<div *ngIf="variable === 'hola'">
+    <button class="btn btn-danger">success</button>
+    Aquí se muestra texto cuando variable es igual a hola
+</div >
+<h3>
+    Botón usando class para el botón    
+</h3>
+<button [class]="btn_class">
+    success 
+</button>
+<h3>
+    Botón ternario
+</h3>
+<button [class]="variable==='success'?'btn btn-dark':'btn btn-danger'">
+    {{variable}}
+</button>
+
+<h3>
+    Botón usando ng class
+</h3>
+<button 
+    class="btn"
+    [ngClass]="{'btn-danger':variable==='success'}">
+    Sucesss
+</button>
+<!--Esta es una lista usando un ciclo for-->
+<div *ngFor="let itemuser of user">
+    <div>{{itemuser.name}}</div>
+    <div>{{itemuser.descripcion}}</div>
+    <hr size="10" width="100">
+</div>
+
+
+
+<h1>
+    Entradas (inputs no reactivos) 
+</h1>
+<span>Nombre</span><input type="text" class="from-control" [(ngModel)]="name"><br>
+<br>    
+<span>Desripcion</span><input type="text" class="from-control" [(ngModel)]="description"><br>
+
+
+<h1>
+    Inputs reativos 
+</h1>
+<form [formGroup]="formularioUser">
+    <span>Nombre</span>
+    <input type="text"formControlName="name">
+
+    <span>Descripcion</span>
+    <input type="text"formControlName="description">
+
+    <button class="btn btn-success"(click)="submitForm()">
+        submitForm
+    </button>
+</form>
+
+
+<!--<button class="btn btn-success"(click)="submitForm()">moestrar los valores en consola</button>-->
+<br>
+
+<div class="card" style="width: 18rem;">
+    
+    <div class="card-body">
+      <h5 class="card-title">Valores ingresados</h5>
+      <h6>Nombre</h6>
+      {{name}}
+      <h6>Descripción</h6>
+      {{description}}
+    </div>
+</div>
+<br>
+<table class="table table-sm table-primary"> 
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let itemuser of user">
+            <th>{{itemuser.name}}</th>
+            <th>{{itemuser.descripcion}}</th>
+        </tr>
+    </tbody>
+</table>
+<div class="spinner-grow text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+

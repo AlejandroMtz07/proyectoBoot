@@ -1,0 +1,50 @@
+<br>
+
+<div class="alert alert-danger" role="alert">
+  {{card.aviso}}
+</div>
+<!--Tarjetaa para mostrar modal-->
+<div class="position-relative">
+<div class="position-absolute top-50 start-50 ">
+<div class="card"  >
+  <div class="card-body">
+    <h5 class="card-title"><b>{{card.title}}</b></h5>
+    <hr size>
+    <b>Descripción</b>
+    <p class="card-text">
+      {{card.description}} 
+      <img src="https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900" >
+    </p>
+    <!--Botón dentro del modal-->
+    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Lanzar Modal
+    </button>
+  </div>
+</div>
+</div>
+</div>
+
+<!--modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <b>{{card.contenido}}</b>
+        <img src="https://i.ytimg.com/vi/YsAQr7NCXO8/maxresdefault.jpg" height="100" sizes="100">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+<p>Esta es la varible ejemplo</p>
+<b>{{ejemplo}}</b>
+<p>Esta es la variable usuario</p>
+<b>{{usuario}}</b>
+
