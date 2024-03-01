@@ -21,7 +21,11 @@ export class TercerDiaComponent {
       this.user=resp
     })
   }
-
+  enviarDatos() {
+    this.service.MetodoPost().subscribe(resp=> {
+      this.user.push(resp)
+    })
+  }
   editarTexto(text:string){
     console.log(text)
     return text;

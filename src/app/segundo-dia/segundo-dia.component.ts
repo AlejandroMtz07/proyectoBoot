@@ -16,6 +16,7 @@ export class SegundoDiaComponent {
   name=''
   description=''
   
+  
   formularioUser:FormGroup = new FormGroup({
     name:new FormControl(''),
     description: new FormControl('')

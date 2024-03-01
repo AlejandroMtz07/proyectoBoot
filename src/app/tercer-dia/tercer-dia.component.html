@@ -1,11 +1,9 @@
 
 <input type="text" [(ngModel)]="name" class="form-control">
-
 <button class="btn btn.primary" (click)="service.onClickButton(name)">
-    Boton que muestra
+    Información
 </button>
-
-
+{{service.var_service}}
 <div style="height: 600px;overflow:auto;">
 
 <table class="table table-sm table-primary"> 
@@ -27,4 +25,4 @@
 </div>
 
 
-{{service.var_service}}
+

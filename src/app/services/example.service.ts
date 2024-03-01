@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { text } from 'stream/consumers';
 
@@ -6,17 +7,26 @@ import { text } from 'stream/consumers';
   providedIn: 'root',
 })
 export class ExampleService {
-  var_service ="estoy en el bootcamp";
+  var_service ='';
   api_url='https://jsonplaceholder.typicode.com/'
+  newRecord: any={}
   constructor(private http:HttpClient){}
 
 
   obtenerLista(){
     return this.http.get(this.api_url+'posts')
   }
-  agregarElemento(){
-
-  }
+  MetodoPost(): Observable<any> {
+    return this.http.post((this.api_url+'posts'),{
+      Headers:{
+        'content-type':'aplication/json;'
+      },
+      id: 1,
+      title:'foo',
+      body:'bar',
+      userId:1,
+    })
+  }
   editarElemento(){
 
   }
